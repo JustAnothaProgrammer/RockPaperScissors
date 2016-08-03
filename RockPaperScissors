@@ -1,0 +1,40 @@
+var uChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+var cChoice = Math.ceil(Math.random() * 3);
+switch (cChoice) {
+  case (1):
+    cChoice = "rock"
+    break;
+  case (2):
+    cChoice = "paper"
+    break;
+  case (3):
+    cChoice = "scissors"
+    break;
+}
+
+switch (uChoice) {
+  case ("rock"):
+  case ("paper"):
+  case ("scissors"):
+    start()
+    break;
+  default:
+    alert("You didn't choose rock, paper, or scissors!")
+}
+
+function start() {
+  switch (uChoice + "|" + cChoice) {
+    case ("rock|scissors"):
+    case ("scissors|paper"):
+    case ("paper|rock"):
+      alert("You win! You chose " + uChoice + ", while the computer chose " + cChoice + "! Congrats!")
+      break;
+    case ("rock|rock"):
+    case ("paper|paper"):
+    case ("scissors|scissors"):
+      alert("You tied! You and the computer both chose " + uChoice + "! Better luck next time!")
+      break;
+    default:
+      alert("You lost! The computer chose " + cChoice + ", while you chose " + uChoice + "! Better luck next time!")
+  }
+}
